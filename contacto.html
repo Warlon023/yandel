@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Turismo en República Dominicana</title>
+    <link rel="stylesheet" href="estiloss.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Descubre República Dominicana</h1>
+            <nav>
+                <ul>
+                    <li><a href="indice.html">Inicio</a></li>
+                   
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Para cualquier consulta, no dudes en contactarnos a través del siguiente formulario o utilizando la información de contacto proporcionada.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>Dirección</h3>
+                <p>Calle Principal, Santo Domingo, República Dominicana</p>
+            </div>
+            <div class="contact-item">
+                <h3>Teléfono</h3>
+                <p>+1 809-123-4567</p>
+            </div>
+            <div class="contact-item">
+                <h3>Email</h3>
+                <p>info@turismord.com</p>
+            </div>
+            <div class="contact-item">
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                <p>Sábado: 10:00 AM - 2:00 PM</p>
+            </div>
+        </div>
+        <form action="submit_form.php" method="post" class="contact-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p class="small-text">© 2024 Turismo RD. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="nuevo.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.contact-form');
+            form.addEventListener('submit', function(event) {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (!name || !email || !message) {
+                    alert('Por favor, completa todos los campos antes de enviar.');
+                    event.preventDefault(); // Evita que el formulario se envíe
+                }
+            });
+        });
+    </script>
+</body>
+</html>
